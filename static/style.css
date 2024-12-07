@@ -1,0 +1,141 @@
+:root {
+    --primary-green: #2ecc71;
+    --secondary-green: #27ae60;
+    --accent-green-1: #1abc9c;
+    --accent-green-2: #16a085;
+    --white-transparent: rgba(255,255,255,0.1);
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, var(--primary-green), var(--secondary-green), var(--accent-green-1), var(--accent-green-2));
+    background-size: 400% 400%;
+    animation: GradientAnimation 15s ease infinite;
+    color: white;
+}
+
+@keyframes GradientAnimation {
+    0% {background-position: 0% 50%}
+    50% {background-position: 100% 50%}
+    100% {background-position: 0% 50%}
+}
+
+.global-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--white-transparent);
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.page-title {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.form-input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.form-input:focus {
+    outline: none;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.main-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-green-2);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.main-button:hover {
+    background-color: var(--accent-green-1);
+    transform: scale(1.05);
+}
+
+#landing-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+#welcome-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#action-section {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+}
+
+.landing-button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: white;
+}
+
+#signin-button {
+    background-color: var(--accent-green-1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+#login-button {
+    background-color: var(--accent-green-2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.landing-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+#welcome-title {
+    color: white;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}

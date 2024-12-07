@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1 class="page-title">S'inscrire</h1>
+
+{% from "includes/_formhelpers.html" import render_field %}
+<form method="POST" action="">
+    {{render_field(form.name, class_="form-input", placeholder="Nom")}}
+    {{render_field(form.email, class_="form-input", placeholder="Email")}}
+    {{render_field(form.role, class_="form-input", onchange="toggleTeachingRegNumber(this)")}}
+    
+    <div id="teaching-reg-number-group" style="display: none;">
+        {{render_field(form.teaching_reg_number, class_="form-input", placeholder="Matricule d'enseignement")}}
+    </div>
+    
+    {{render_field(form.username, class_="form-input", placeholder="Nom d'utilisateur")}}
+    {{render_field(form.password, class_="form-input", placeholder="Mot de passe")}}
+    {{render_field(form.confirm, class_="form-input", placeholder="Confirmer le mot de passe")}}
+    
+    <button type="submit" class="main-button">S'inscrire</button>
+</form>
+
+<script>
+function toggleTeachingRegNumber(selectElement) {
+    var teachingRegNumberGroup = document.getElementById('teaching-reg-number-group');
+    var teachingRegNumberInput = document.getElementById('teaching_reg_number');
+    
+    if (selectElement.value === 'admin') {
+        teachingRegNumberGroup.style.display = 'block';
+        teachingRegNumberInput.setAttribute('required', 'required');
+    } else {
+        teachingRegNumberGroup.style.display = 'none';
+        teachingRegNumberInput.removeAttribute('required');
+    }
+}
+</script>
+{% endblock %}

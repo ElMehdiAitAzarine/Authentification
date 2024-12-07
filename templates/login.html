@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h1 class="page-title">Se connecter</h1>
+<form action="" method="POST">
+    <div class="form-group">
+        <input type="text" name="username" class="form-input" placeholder="Nom d'utilisateur" value="{{request.form.username}}">
+    </div>
+    <div class="form-group">
+        <input type="password" name="password" class="form-input" placeholder="Mot de passe">
+    </div>
+    <button type="submit" class="main-button">Se connecter</button>
+</form>
+{% endblock %}
